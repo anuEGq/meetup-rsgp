@@ -12,6 +12,7 @@ import FavoriteContext from '../../store/favorite-context';
 
 const ITEM_HEIGHT = 48;
 export default function MeetupItem(props) {
+  const {fetchData} = props;
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -23,6 +24,7 @@ export default function MeetupItem(props) {
   const handleClose = () => {
     axios.delete(`https://meetup-react-acb2e-default-rtdb.firebaseio.com/meetups/${props.id}.json`)
     .then((res)=>{
+      fetchData();
       toast.error('Deleted', {
         position: "bottom-right",
         autoClose: 5000,
@@ -112,7 +114,7 @@ export default function MeetupItem(props) {
             display: '-webkit-box',
             overflow: 'hidden',
             WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: 3,
+            WebkitLineClamp: 1,
           }} 
           variant="body2" color="text.secondary">
          {props.desc}
