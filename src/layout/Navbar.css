@@ -1,0 +1,12 @@
+.menu{
+    color: white;
+    display: flex;
+    list-style: none;
+}
+.menu_item{
+    color: white;
+    text-decoration: none;
+}
+.m_i{
+    margin-right: 10px;
+}
