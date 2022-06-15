@@ -17,7 +17,9 @@ export default function MeetupItem(props) {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  const closeMenu = (event) => {
+    setAnchorEl(null);
+  };
   const handleClose = () => {
     axios.delete(`https://meetup-react-acb2e-default-rtdb.firebaseio.com/meetups/${props.id}.json`)
     .then((res)=>{
@@ -83,7 +85,7 @@ export default function MeetupItem(props) {
           <IconButton aria-label="more" id="long-button" aria-controls={open ? 'long-menu' : undefined} aria-expanded={open ? 'true' : undefined}
            aria-haspopup="true" onClick={handleClick}> <MoreVertIcon /> </IconButton>
           <Menu id="long-menu" MenuListProps={{'aria-labelledby': 'long-button',}} anchorEl={anchorEl}
-           open={open} onClose={handleClose}
+           open={open} onClose={closeMenu}
            PaperProps={{
              style: {
                maxHeight: ITEM_HEIGHT * 4.5,
