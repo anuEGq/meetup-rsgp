@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
     <FavoriteContextProvider>
     <BrowserRouter>
-    <App />
+    <App />/*hi*/
     </BrowserRouter>
     </FavoriteContextProvider>
   </React.StrictMode>
