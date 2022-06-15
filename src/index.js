@@ -12,7 +12,7 @@ root.render(
     <BrowserRouter>
     <App />
     </BrowserRouter>
-    /*fghj*/
+  /*hi*/
     </FavoriteContextProvider>
   </React.StrictMode>
 );
